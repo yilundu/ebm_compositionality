@@ -1,6 +1,6 @@
 # Compositional Visual Generation and Inference with Energy Based Models 
 
-Code for [Compositional Visual Generation and Inference with Energy Based Models](https://energy-based-model.github.io/compositional-generation-inference/). Webpage can be found [here](https://energy-based-model.github.io/compositional-generation-inference/) and pretrained CelebA models can be found [here]()
+Code for [Compositional Visual Generation and Inference with Energy Based Models](https://energy-based-model.github.io/compositional-generation-inference/). Webpage can be found [here](https://energy-based-model.github.io/compositional-generation-inference/) and pretrained CelebA models can be found [here](https://www.dropbox.com/s/x9ag0o7bzzh85v1/ebm_compositionality.tar.gz?dl=0)
 
 ## Install Prerequisites
 
@@ -12,11 +12,19 @@ pip install -r requirements.txt
 
 ## Download Datasets
 
-We run experiments on Mujoco Scenes and CelebA dataset. To generate data used in the Mujoco Scenes dataset, look in the image\_comb directory (you will need to appropriately modify the path) and run the corresponding files inside. You can download the CelebA dataset [here](https://drive.google.com/drive/folders/0B7EVK8r0v71pWEZsZE9oNnFzTm8)
+We run experiments on Mujoco Scenes and CelebA dataset. To generate data used in the Mujoco Scenes dataset, look in the image\_comb directory (you will need to appropriately modify the path) and run the corresponding files inside.  For example to generate the continual learning dataset, you can use the command:
+
+```
+python image_comb/cube_continual.py
+```
+
+Feel free to reach out to us for pre-generated Mujoco Scenes Datasets 
+
+You can download the CelebA dataset [here](https://drive.google.com/drive/folders/0B7EVK8r0v71pWEZsZE9oNnFzTm8)
 
 ## Download Pretrained Models
 
-We provided the pretrained CelebA models [here](). Please extract the file in the root directory of repository. This should output a cachedir directory
+We provided the pretrained CelebA models [here](https://www.dropbox.com/s/x9ag0o7bzzh85v1/ebm_compositionality.tar.gz?dl=0). Please extract the file in the root directory of repository. This should output a cachedir directory
 
 ## Training 
 
