@@ -1,7 +1,7 @@
 imageio==2.6.1
 torch==1.1.0
 numpy==1.17.4
-tensorflow==1.13.1
+tensorflow==1.15.2
 scipy==1.2.1
 scikit_image==0.15.0
 tqdm==4.32.1
