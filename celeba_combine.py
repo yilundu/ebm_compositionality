@@ -1,14 +1,13 @@
 import tensorflow as tf
 import math
 from tqdm import tqdm
-from hmc import hmc
 from tensorflow.python.platform import flags
 from torch.utils.data import DataLoader, Dataset
 from models import ResNet128
 from utils import optimistic_restore, ReplayBuffer
 import os.path as osp
 import numpy as np
-from rl_algs.logger import TensorBoardOutputFormat
+from baselines.logger import TensorBoardOutputFormat
 from scipy.misc import imsave
 import os
 from custom_adam import AdamOptimizer
@@ -203,7 +202,7 @@ def combine_main(models, resume_iters, select_idx):
 
 if __name__ == "__main__":
     models_orig = ['celeba_smiling', 'celeba_male', 'celeba_attractive', 'celeba_black', 'celeba_old', 'celeba_wavy_hair', 'celeba_old']
-    resume_iters_orig = [23000, 24000, 22000, 32000, 24000, 24000, 22000]
+    resume_iters_orig = [23000, 23000, 22000, 32000, 24000, 24000, 24000]
 
 
     ##################################

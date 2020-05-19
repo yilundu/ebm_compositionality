@@ -159,18 +159,26 @@ class CubesNetGen(object):
 class ResNet128(object):
     """Construct the convolutional network specified in MAML"""
 
-    def __init__(self, num_channels=3, num_filters=64, train=False):
+    def __init__(self, num_channels=3, num_filters=64, train=False, classes=1000):
 
         self.channels = num_channels
         self.dim_hidden = num_filters
         self.dropout = train
         self.train = train
+        self.classes = classes
+
+        print("set classes to be", classes)
 
     def construct_weights(self, scope=''):
         weights = {}
         dtype = tf.float32
 
-        classes = 1000
+        if not FLAGS.cclass:
+            classes = 1
+        else:
+            classes = self.classes
+
+        print("constructing weights with class number ", classes)
 
         with tf.variable_scope(scope):
             # First block
@@ -188,13 +196,9 @@ class ResNet128(object):
 
         return weights
 
-    def forward(self, inp, weights, reuse=False, scope='', stop_grad=False, label=None, stop_at_grad=False, stop_batch=False):
+    def forward(self, inp, weights, reuse=False, scope='', stop_grad=False, label=None, stop_at_grad=False, stop_batch=False, latent=None):
         weights = weights.copy()
         batch = tf.shape(inp)[0]
-
-        if FLAGS.augment_vis:
-            for transform in standard_transforms:
-                inp = transform(inp)
 
         if not FLAGS.cclass:
             label = None

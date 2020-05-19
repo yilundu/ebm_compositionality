@@ -3,7 +3,6 @@ torch==1.1.0
 numpy==1.17.4
 tensorflow==1.13.1
 scipy==1.2.1
-baselines.egg==info
 scikit_image==0.15.0
 tqdm==4.32.1
 mujoco_py==2.0.2.9
@@ -17,4 +16,4 @@ mpi4py==3.0.3
 Pillow==7.1.1
 rl_algs==0.0.0
 scikit_learn==0.22.2.post1
-skimage==0.0
+scikit-image

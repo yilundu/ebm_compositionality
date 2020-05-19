@@ -8,7 +8,6 @@ import warnings
 from tensorflow.contrib.layers.python import layers as tf_layers
 from tensorflow.python.platform import flags
 from tensorflow.contrib.framework import sort
-from filters import stride_3, stride_5
 
 FLAGS = flags.FLAGS
 flags.DEFINE_integer('spec_iter', 1, 'Number of iterations to normalize spectrum of matrix')
