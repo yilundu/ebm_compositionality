@@ -24,7 +24,7 @@ flags.DEFINE_bool('proj_cclass', False, 'use for backwards compatibility reasons
 flags.DEFINE_bool('spec_norm', True, 'Whether to use spectral normalization on weights')
 flags.DEFINE_bool('use_bias', True, 'Whether to use bias in convolution')
 flags.DEFINE_bool('use_attention', False, 'Whether to use self attention in network')
-flags.DEFINE_integer('num_steps', 20, 'number of steps to optimize the label')
+flags.DEFINE_integer('num_steps', 100, 'number of steps to optimize the label')
 flags.DEFINE_string('task', 'negation_figure', 'conceptcombine, combination_figure, negation_figure, or_figure')
 
 flags.DEFINE_bool('latent_energy', False, 'latent energy in model')
@@ -202,7 +202,7 @@ def combine_main(models, resume_iters, select_idx):
 
 if __name__ == "__main__":
     models_orig = ['celeba_smiling', 'celeba_male', 'celeba_attractive', 'celeba_black', 'celeba_old', 'celeba_wavy_hair', 'celeba_old']
-    resume_iters_orig = [23000, 23000, 22000, 32000, 24000, 24000, 24000]
+    resume_iters_orig = [24000, 23000, 22000, 32000, 24000, 24000, 24000]
 
 
     ##################################
