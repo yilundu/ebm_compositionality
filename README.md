@@ -24,7 +24,7 @@ You can download the CelebA dataset [here](https://drive.google.com/drive/folder
 
 ## Download Pretrained Models
 
-We provided the pretrained CelebA models [here](https://www.dropbox.com/s/ymnfgxwtzxfr1yj/cachedir_compositionality.tar.gz?dl=0). Please extract the file in the root directory of repository. This should output a cachedir directory
+We provided the pretrained CelebA models [here](https://www.dropbox.com/s/skp8xmfeaf89ewq/cachedir_compositionality.tar.gz?dl=0). Please extract the file in the root directory of repository. This should output a cachedir directory
 
 ## Training 
 
