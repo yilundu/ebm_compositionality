@@ -2,8 +2,8 @@ import tensorflow as tf
 import numpy as np
 from tensorflow.python.platform import flags
 
-from data import Cubes, Pairs, CubesColor, CubesPos, CubesContinual, CubesCrossProduct, CelebA
-from models import CubesNet, HeirNet, CubesNetGen
+from data import Cubes, CubesColor, CubesPos, CubesContinual, CubesCrossProduct, CelebA
+from models import CubesNet, CubesNetGen
 import os.path as osp
 import os
 from baselines.logger import TensorBoardOutputFormat
@@ -19,18 +19,8 @@ import numpy as np
 from custom_adam import AdamOptimizer
 from scipy.misc import imsave
 import matplotlib.pyplot as plt
-from hmc import hmc
 import scipy.ndimage
 from filters import stride_3
-
-from mpi4py import MPI
-comm = MPI.COMM_WORLD
-rank = comm.Get_rank()
-
-# import horovod.tensorflow as hvd
-# hvd.init()
-
-# from inception import get_inception_score
 
 torch.manual_seed(0)
 np.random.seed(0)
@@ -337,7 +327,6 @@ def train(target_vars, saver, sess, logger, dataloader, resume_iter, logdir):
                     print("Training is unstable")
                     assert False
 
-                # if hvd.rank() == 0:
                 print(string)
                 logger.writekvs(kvs)
             else:
@@ -498,20 +487,11 @@ def test(target_vars, saver, sess, logger, dataloader):
 
 
 def main():
-    # print("Local rank: ", hvd.local_rank(), hvd.size())
 
     logdir = osp.join(FLAGS.logdir, FLAGS.exp)
-    # if hvd.rank() == 0:
-    #     if not osp.exists(logdir):
-    #         os.makedirs(logdir)
     logger = TensorBoardOutputFormat(logdir)
-    #else:
-    #    logger = None
 
     config = tf.ConfigProto()
-
-    # if hvd.size() > 1:
-    #     config.gpu_options.visible_device_list = str(hvd.local_rank())
 
     sess = tf.Session(config=config)
     LABEL = None
@@ -719,7 +699,6 @@ def main():
         x_mod_list = []
 
         optimizer = AdamOptimizer(FLAGS.lr, beta1=0.0, beta2=0.99)
-        # optimizer = hvd.DistributedOptimizer(optimizer)
 
         for j in range(FLAGS.num_gpus):
 
@@ -1018,7 +997,6 @@ def main():
         # saver.restore(sess, model_file)
         optimistic_restore(sess, model_file)
 
-    # sess.run(hvd.broadcast_global_variables(0))
     print("Initializing variables...")
 
     print("Start broadcast")

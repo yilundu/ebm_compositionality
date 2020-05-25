@@ -12,7 +12,6 @@ from scipy.misc import imread, imresize
 from skimage.color import rgb2grey
 from torchvision.datasets import CIFAR10, MNIST, SVHN, CIFAR100, ImageFolder
 from torchvision import transforms
-from imagenet_preprocessing import ImagenetPreprocessor
 import torch
 import torchvision
 from itertools import product
