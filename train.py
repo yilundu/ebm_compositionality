@@ -630,7 +630,10 @@ def main():
         X = tf.placeholder(shape=(None, 64, 64, 3), dtype=tf.float32)
         HEIR_LABEL = tf.placeholder(shape=(None, 2), dtype=tf.float32)
         ATTENTION_MASK = tf.placeholder(shape=(None, 64, 64, FLAGS.cond_func), dtype=tf.float32)
-        model = CubesNet(num_channels=channel_num, label_size=label_size)
+
+        if FLAGS.dataset != "celeba":
+            model = CubesNet(num_channels=channel_num, label_size=label_size)
+
         heir_model = HeirNet(num_channels=FLAGS.cond_func)
 
         models_pretrain = []
