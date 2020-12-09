@@ -35,3 +35,7 @@ The files ebm_sandbox.py and celeba_combine.py contains evaluation functions use
 python celeba_combine.py
 ```
 
+
+## High Resolution CelebA Generation
+
+High resolution images in CelebA are composed using the training method [here](https://arxiv.org/pdf/2012.01316.pdf). We are working on a code release for this -- email us if you want to get an uncleaned version of the codebase
