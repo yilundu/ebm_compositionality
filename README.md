@@ -1,4 +1,4 @@
-Code for [Compositional Visual Generation with Energy Based Models](https://arxiv.org/abs/2004.06030) A pytorch codebase for compositionality can be found [here](www.github.com/yilundu/improved_contrastive_divergence).
+Code for [Compositional Visual Generation with Energy Based Models](https://arxiv.org/abs/2004.06030) A pytorch codebase for compositionality can be found [here](https://www.github.com/yilundu/improved_contrastive_divergence).
 
 ## Install Prerequisites
 
