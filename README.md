@@ -40,4 +40,4 @@ python celeba_combine.py
 
 ## High Resolution CelebA Generation
 
-High resolution images in CelebA are composed using the training method [here](https://arxiv.org/pdf/2012.01316.pdf). Code for composing and training models can be found [here](www.github.com/yilundu/improved_contrastive_divergence).
+High resolution images in CelebA are composed using the training method [here](https://arxiv.org/pdf/2012.01316.pdf). Code for composing and training models can be found [here](https://www.github.com/yilundu/improved_contrastive_divergence).
