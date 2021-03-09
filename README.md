@@ -41,3 +41,9 @@ python celeba_combine.py
 ## High Resolution CelebA Generation
 
 High resolution images in CelebA are composed using the training method [here](https://arxiv.org/pdf/2012.01316.pdf). Code for composing and training models can be found [here](https://www.github.com/yilundu/improved_contrastive_divergence).
+
+## Cubes Dataset
+
+The dataset used for 3D cube experiments can be found at:
+
+https://www.dropbox.com/sh/202zhctt6rac0lw/AACAYhk6K6_FPYrremx9A1D_a?dl=0
