@@ -13,6 +13,6 @@ baselines==0.1.5
 filters==1.3.2
 hmc==0.3
 mpi4py==3.0.3
-Pillow==7.1.1
+Pillow==8.2.0
 rl_algs==0.0.0
 scikit_learn==0.22.2.post1
